@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Retrabajo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-concluida {
+            background-color: green;
+        }
+        .status-en-proceso {
+            background-color: yellow;
+        }
+        .status-no-terminado {
+            background-color: orange;
+        }
+        .status-no-asignado {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Área de Retrabajo</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="retrabajo.html">Inicio</a></li>
+            <li><a href="logout.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Órdenes para Retrabajo</h2>
+        <!-- Mostrar órdenes para retrabajo -->
+        <div class="order-status">
+            <span>Número de Orden: ORD-12345</span>
+            <span>Comentarios: Revisar diseño</span>
+            <span class="status-indicator status-no-terminado"></span>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Proyecto</p>
+    </footer>
+</body>
+</html>

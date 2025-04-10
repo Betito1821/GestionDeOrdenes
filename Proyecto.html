@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Planeación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Área de Planeación</h1>
+        <nav>
+            <ul>
+                <li><a href="server.php?logout=true">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Subir Archivos</h2>
+        <form action="server.php" method="post" enctype="multipart/form-data">
+            <label for="file">Subir archivo (xlsx, xlsb, xlsm):</label>
+            <input type="file" id="file" name="file[]" accept=".xlsx,.xlsb,.xlsm" multiple required>
+            <label for="prioridad">Marcar como Prioridad:</label>
+            <input type="checkbox" id="prioridad" name="prioridad">
+            <label for="designer">Asignar a Diseñador:</label>
+            <select id="designer" name="designer" required>
+                <!-- Aquí debes cargar los diseñadores desde la base de datos -->
+                <?php
+                $conn = new mysqli('localhost', 'root', '', 'gestion_ordenes');
+                $designers = $conn->query("SELECT id, username FROM usuarios WHERE role = 'diseno'");
+                while ($row = $designers->fetch_assoc()) {
+                    echo "<option value='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['username']) . "</option>";
+                }
+                ?>
+            </select>
+            <button type="submit" name="upload">Subir y Asignar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Proyecto</p>
+    </footer>
+</body>
+</html>

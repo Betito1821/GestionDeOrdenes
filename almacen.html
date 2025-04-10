@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Almacén</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-concluida {
+            background-color: green;
+        }
+        .status-en-proceso {
+            background-color: yellow;
+        }
+        .status-no-terminado {
+            background-color: orange;
+        }
+        .status-no-asignado {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Área de Almacén</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="almacen.html">Inicio</a></li>
+            <li><a href="logout.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Órdenes Completas</h2>
+        <!-- Mostrar órdenes completas -->
+        <form action="send_to_embarque.php" method="post">
+            <label for="order_number">Número de Orden:</label>
+            <input type="text" id="order_number" name="order_number" required>
+            <button type="submit">Enviar a Embarque</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Proyecto</p>
+    </footer>
+</body>
+</html>

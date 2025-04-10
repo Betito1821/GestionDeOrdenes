@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Maquetado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Área de Maquetado</h1>
+        <nav>
+            <ul>
+                <li><a href="maquetado.php">Inicio</a></li>
+                <li><a href="logout.php">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Gestión de Órdenes</h2>
+        <section>
+            <!-- Formulario para actualizar estado -->
+            <form action="update_status.php" method="post">
+                <label for="order_number">Número de Orden:</label>
+                <input type="text" id="order_number" name="order_number" required>
+                <label for="status">Estado:</label>
+                <select id="status" name="status" required>
+                    <option value="concluida">Concluida</option>
+                    <option value="en-proceso">En Proceso</option>
+                    <option value="no-terminado">No Terminado</option>
+                    <option value="no-asignado">No Asignado</option>
+                </select>
+                <button type="submit">Actualizar Estado</button>
+            </form>
+        </section>
+
+        <section>
+            <!-- Formulario para enviar órdenes a retrabajo -->
+            <form action="retrabajo.php" method="post">
+                <label for="order_number_retrabajo">Número de Orden:</label>
+                <input type="text" id="order_number_retrabajo" name="order_number" required>
+                <label for="comments">Comentarios:</label>
+                <textarea id="comments" name="comments" required></textarea>
+                <button type="submit">Enviar a Retrabajo</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Proyecto</p>
+    </footer>
+</body>
+</html>
